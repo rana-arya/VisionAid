@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>VisionAid - AI Visual Assistance</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ===============================
+         HEADER
+    ================================ -->
+
+    <header class="header">
+
+        <div class="brand">
+            <div class="logo">V</div>
+
+            <div>
+                <h1>VisionAid</h1>
+                <p>See the world through sound.</p>
+            </div>
+        </div>
+
+        <div class="header-status">
+            <span class="status-dot"></span>
+            AI Accessibility Assistant
+        </div>
+
+    </header>
+
+
+    <!-- ===============================
+         MAIN
+    ================================ -->
+
+    <main class="dashboard">
+
+
+        <!-- ===============================
+             CAMERA SECTION
+        ================================ -->
+
+        <section class="camera-section">
+
+            <div class="section-heading">
+
+                <div>
+                    <span class="section-label">
+                        LIVE VISION
+                    </span>
+
+                    <h2>Camera View</h2>
+                </div>
+
+                <div class="live-indicator">
+                    <span></span>
+                    LIVE
+                </div>
+
+            </div>
+
+
+            <div class="camera-container">
+
+                <video
+                    id="camera"
+                    autoplay
+                    playsinline>
+                </video>
+
+                <canvas
+                    id="detectionCanvas">
+                </canvas>
+
+                <div
+                    id="camera-message"
+                    class="camera-message">
+
+                    Camera is not active
+
+                </div>
+
+            </div>
+
+
+            <button
+                id="cameraButton"
+                class="camera-button">
+
+                Enable Camera
+
+            </button>
+
+        </section>
+
+
+        <!-- ===============================
+             STATUS GRID
+        ================================ -->
+
+        <section class="status-grid">
+
+
+            <!-- AI STATUS -->
+
+            <div class="status-card">
+
+                <div class="card-header">
+
+                    <span class="card-icon">
+                        🤖
+                    </span>
+
+                    <span class="card-label">
+                        AI STATUS
+                    </span>
+
+                </div>
+
+                <h3 id="aiStatus">
+                    Waiting for camera...
+                </h3>
+
+                <p>
+                    Vision model status
+                </p>
+
+            </div>
+
+
+            <!-- DETECTIONS -->
+
+            <div class="status-card">
+
+                <div class="card-header">
+
+                    <span class="card-icon">
+                        👁️
+                    </span>
+
+                    <span class="card-label">
+                        DETECTIONS
+                    </span>
+
+                </div>
+
+                <h3 id="detectionStatus">
+                    No objects detected
+                </h3>
+
+                <p>
+                    Objects detected by AI
+                </p>
+
+            </div>
+
+
+            <!-- PRIORITY -->
+
+            <div class="status-card">
+
+                <div class="card-header">
+
+                    <span class="card-icon">
+                        🧠
+                    </span>
+
+                    <span class="card-label">
+                        DECISION
+                    </span>
+
+                </div>
+
+                <h3 id="priorityStatus">
+                    Waiting
+                </h3>
+
+                <p>
+                    Highest priority situation
+                </p>
+
+            </div>
+
+
+            <!-- DIRECTION -->
+
+            <div class="status-card">
+
+                <div class="card-header">
+
+                    <span class="card-icon">
+                        📍
+                    </span>
+
+                    <span class="card-label">
+                        DIRECTION
+                    </span>
+
+                </div>
+
+                <h3 id="directionStatus">
+                    —
+                </h3>
+
+                <p>
+                    Object position
+                </p>
+
+            </div>
+
+
+            <!-- PROXIMITY -->
+
+            <div class="status-card">
+
+                <div class="card-header">
+
+                    <span class="card-icon">
+                        📏
+                    </span>
+
+                    <span class="card-label">
+                        PROXIMITY
+                    </span>
+
+                </div>
+
+                <h3 id="proximityStatus">
+                    —
+                </h3>
+
+                <p>
+                    Approximate proximity
+                </p>
+
+            </div>
+
+
+            <!-- OBJECT COUNT -->
+
+            <div class="status-card">
+
+                <div class="card-header">
+
+                    <span class="card-icon">
+                        🎯
+                    </span>
+
+                    <span class="card-label">
+                        OBJECT COUNT
+                    </span>
+
+                </div>
+
+                <h3 id="objectCount">
+                    0
+                </h3>
+
+                <p>
+                    Target objects detected
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ===============================
+             LATEST ALERT
+        ================================ -->
+
+        <section class="alert-section">
+
+            <div class="alert-icon">
+                🔊
+            </div>
+
+            <div class="alert-content">
+
+                <span>
+                    LATEST VOICE ALERT
+                </span>
+
+                <h2 id="alertText">
+                    No alert
+                </h2>
+
+            </div>
+
+            <div class="speech-status">
+                VOICE
+            </div>
+
+        </section>
+
+
+        <!-- ===============================
+             HOW IT WORKS
+        ================================ -->
+
+        <section class="how-section">
+
+            <div class="section-label">
+                HOW VISIONAID WORKS
+            </div>
+
+            <div class="flow">
+
+                <div class="flow-item">
+                    <span>📷</span>
+                    <p>Camera</p>
+                </div>
+
+                <div class="flow-arrow">
+                    →
+                </div>
+
+                <div class="flow-item">
+                    <span>🤖</span>
+                    <p>AI Detection</p>
+                </div>
+
+                <div class="flow-arrow">
+                    →
+                </div>
+
+                <div class="flow-item">
+                    <span>🧠</span>
+                    <p>Priority</p>
+                </div>
+
+                <div class="flow-arrow">
+                    →
+                </div>
+
+                <div class="flow-item">
+                    <span>🔊</span>
+                    <p>Voice Alert</p>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ===============================
+         FOOTER
+    ================================ -->
+
+    <footer>
+
+        <p>
+            VisionAid • AI-powered visual assistance
+        </p>
+
+        <span>
+            Browser-based AI • COCO-SSD • SpeechSynthesis
+        </span>
+
+    </footer>
+
+
+    <!-- ===============================
+         AI LIBRARIES
+    ================================ -->
+
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/coco-ssd"></script>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

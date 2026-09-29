@@ -1,0 +1,742 @@
+/* ===============================
+   VisionAid - Main Styling
+================================ */
+
+
+/* ===============================
+   RESET
+================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* ===============================
+   BODY
+================================ */
+
+body {
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background:
+        radial-gradient(
+            circle at top,
+            #172554 0%,
+            #0f172a 40%,
+            #020617 100%
+        );
+
+    color: #ffffff;
+
+    min-height: 100vh;
+}
+
+
+/* ===============================
+   HEADER
+================================ */
+
+.header {
+
+    width: 92%;
+    max-width: 1250px;
+
+    margin: auto;
+
+    padding:
+        28px 0;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    border-bottom:
+        1px solid #1e293b;
+}
+
+
+.brand {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+}
+
+
+.logo {
+
+    width: 48px;
+    height: 48px;
+
+    border-radius: 14px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #2563eb,
+            #06b6d4
+        );
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    font-size: 25px;
+    font-weight: bold;
+}
+
+
+.brand h1 {
+
+    font-size: 30px;
+
+    letter-spacing: -0.5px;
+}
+
+
+.brand p {
+
+    color: #94a3b8;
+
+    margin-top: 3px;
+
+    font-size: 14px;
+}
+
+
+.header-status {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    color: #94a3b8;
+
+    font-size: 13px;
+
+    padding:
+        9px 14px;
+
+    border:
+        1px solid #334155;
+
+    border-radius: 20px;
+
+    background:
+        rgba(15, 23, 42, 0.7);
+}
+
+
+.status-dot {
+
+    width: 8px;
+    height: 8px;
+
+    background: #22c55e;
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 10px #22c55e;
+}
+
+
+/* ===============================
+   DASHBOARD
+================================ */
+
+.dashboard {
+
+    width: 92%;
+
+    max-width: 1250px;
+
+    margin:
+        35px auto 60px;
+}
+
+
+/* ===============================
+   SECTION HEADING
+================================ */
+
+.section-heading {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: end;
+
+    margin-bottom: 15px;
+}
+
+
+.section-label {
+
+    color: #60a5fa;
+
+    font-size: 11px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+}
+
+
+.section-heading h2 {
+
+    font-size: 25px;
+
+    margin-top: 5px;
+}
+
+
+.live-indicator {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    color: #f87171;
+}
+
+
+.live-indicator span {
+
+    width: 8px;
+    height: 8px;
+
+    border-radius: 50%;
+
+    background: #ef4444;
+
+    box-shadow:
+        0 0 10px #ef4444;
+}
+
+
+/* ===============================
+   CAMERA
+================================ */
+
+.camera-section {
+
+    margin-bottom: 25px;
+}
+
+
+.camera-container {
+
+    position: relative;
+
+    width: 100%;
+
+    max-width: 1100px;
+
+    margin: auto;
+
+    background: #020617;
+
+    border:
+        1px solid #334155;
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 20px 60px
+        rgba(0, 0, 0, 0.35);
+}
+
+
+#camera {
+
+    width: 100%;
+
+    display: block;
+
+    background: #020617;
+}
+
+
+#detectionCanvas {
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    pointer-events: none;
+}
+
+
+.camera-message {
+
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    color: #64748b;
+
+    font-size: 18px;
+
+    text-align: center;
+}
+
+
+/* ===============================
+   CAMERA BUTTON
+================================ */
+
+.camera-button {
+
+    display: block;
+
+    margin:
+        18px auto 0;
+
+    padding:
+        13px 30px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #2563eb,
+            #0891b2
+        );
+
+    color: white;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s,
+        box-shadow 0.2s;
+}
+
+
+.camera-button:hover {
+
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 10px 25px
+        rgba(37, 99, 235, 0.3);
+}
+
+
+.camera-button:active {
+
+    transform:
+        translateY(0);
+}
+
+
+/* ===============================
+   STATUS GRID
+================================ */
+
+.status-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 16px;
+
+    margin-top: 25px;
+}
+
+
+/* ===============================
+   STATUS CARD
+================================ */
+
+.status-card {
+
+    background:
+        rgba(30, 41, 59, 0.75);
+
+    border:
+        1px solid #334155;
+
+    border-radius: 15px;
+
+    padding: 20px;
+
+    min-height: 145px;
+
+    transition:
+        border-color 0.2s,
+        transform 0.2s;
+}
+
+
+.status-card:hover {
+
+    border-color: #475569;
+
+    transform:
+        translateY(-2px);
+}
+
+
+.card-header {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    margin-bottom: 17px;
+}
+
+
+.card-icon {
+
+    font-size: 18px;
+}
+
+
+.card-label {
+
+    color: #94a3b8;
+
+    font-size: 10px;
+
+    font-weight: bold;
+
+    letter-spacing: 1.5px;
+}
+
+
+.status-card h3 {
+
+    font-size: 20px;
+
+    color: #f8fafc;
+
+    margin-bottom: 8px;
+
+    line-height: 1.35;
+}
+
+
+.status-card p {
+
+    color: #64748b;
+
+    font-size: 12px;
+}
+
+
+/* ===============================
+   ALERT SECTION
+================================ */
+
+.alert-section {
+
+    margin-top: 20px;
+
+    padding:
+        22px 25px;
+
+    border-radius: 16px;
+
+    border:
+        1px solid #2563eb;
+
+    background:
+        linear-gradient(
+            100deg,
+            rgba(37, 99, 235, 0.15),
+            rgba(8, 145, 178, 0.08)
+        );
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    box-shadow:
+        0 10px 40px
+        rgba(37, 99, 235, 0.08);
+}
+
+
+.alert-icon {
+
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 13px;
+
+    background:
+        rgba(37, 99, 235, 0.2);
+
+    font-size: 22px;
+}
+
+
+.alert-content {
+
+    flex: 1;
+}
+
+
+.alert-content > span {
+
+    font-size: 10px;
+
+    font-weight: bold;
+
+    letter-spacing: 1.5px;
+
+    color: #60a5fa;
+}
+
+
+.alert-content h2 {
+
+    font-size: 20px;
+
+    margin-top: 6px;
+
+    color: #f8fafc;
+}
+
+
+.speech-status {
+
+    font-size: 10px;
+
+    font-weight: bold;
+
+    letter-spacing: 1px;
+
+    color: #22c55e;
+
+    padding:
+        7px 11px;
+
+    border:
+        1px solid #166534;
+
+    border-radius: 20px;
+
+    background:
+        rgba(34, 197, 94, 0.08);
+}
+
+
+/* ===============================
+   HOW IT WORKS
+================================ */
+
+.how-section {
+
+    margin-top: 28px;
+
+    padding:
+        22px;
+
+    border:
+        1px solid #1e293b;
+
+    border-radius: 15px;
+
+    background:
+        rgba(15, 23, 42, 0.5);
+}
+
+
+.flow {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 18px;
+
+    margin-top: 20px;
+
+    flex-wrap: wrap;
+}
+
+
+.flow-item {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    color: #cbd5e1;
+
+    font-size: 13px;
+}
+
+
+.flow-item span {
+
+    font-size: 18px;
+}
+
+
+.flow-arrow {
+
+    color: #475569;
+
+    font-size: 20px;
+}
+
+
+/* ===============================
+   FOOTER
+================================ */
+
+footer {
+
+    width: 92%;
+
+    max-width: 1250px;
+
+    margin: auto;
+
+    padding:
+        25px 0 35px;
+
+    border-top:
+        1px solid #1e293b;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    color: #475569;
+
+    font-size: 11px;
+}
+
+
+footer span {
+
+    color: #334155;
+}
+
+
+/* ===============================
+   RESPONSIVE DESIGN
+================================ */
+
+@media (max-width: 900px) {
+
+    .status-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .header-status {
+
+        display: none;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .header {
+
+        padding:
+            20px 0;
+    }
+
+    .brand h1 {
+
+        font-size: 25px;
+    }
+
+    .dashboard {
+
+        margin-top: 25px;
+    }
+
+    .status-grid {
+
+        grid-template-columns: 1fr;
+    }
+
+    .section-heading h2 {
+
+        font-size: 21px;
+    }
+
+    .alert-section {
+
+        align-items: flex-start;
+    }
+
+    .speech-status {
+
+        display: none;
+    }
+
+    footer {
+
+        flex-direction: column;
+
+        gap: 8px;
+    }
+
+}
